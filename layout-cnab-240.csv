@@ -1,0 +1,365 @@
+HEADER DO ARQUIVO;;;;;;;;;;
+SEQ;Posição;;Nº Dig;Nº Dec;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;;;;;;;;
+01.0;1;3;3;-;Num;Controle¹;Banco;;;Código do Sicoob na Compensação: '756'
+02.0;4;7;4;-;Num;;Lote;;;Lote de Serviço: '0000'
+03.0;8;8;1;-;Num;;Registro;;;Tipo de Registro: '0'
+04.0;9;17;9;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN / CNAB: Preencher com espaços em branco
+05.0;18;18;1;-;Num;Empresa²;Inscrição;Tipo;;"Tipo de Inscrição da Empresa:
+'1'  =  CPF
+'2'  =  CGC / CNPJ"
+06.0;19;32;14;-;Num;;;Número;;Número de Inscrição da Empresa
+07.0;33;52;20;-;Alfa;;Convênio;;;Código do Convênio no Sicoob: Preencher com espaços em branco
+08.0;53;57;5;-;Num;;Conta Corrente³;Agência;Código;Prefixo da Cooperativa: vide planilha 'Contracapa' deste arquivo
+09.0;58;58;1;-;Alfa;;;;DV;Dígito Verificador do Prefixo: vide planilha 'Contracapa' deste arquivo
+10.0;59;70;12;-;Num;;;Conta;Número;Conta Corrente: vide planilha 'Contracapa' deste arquivo
+11.0;71;71;1;-;Alfa;;;;DV;Dígito Verificador da Conta: vide planilha 'Contracapa' deste arquivo
+12.0;72;72;1;-;Alfa;;;DV;;Dígito Verificador da Ag/Conta: Preencher com zeros
+13.0;73;102;30;-;Alfa;;Nome;;;Nome da Empresa
+14.0;103;132;30;-;Alfa;Nome do Banco;;;;Nome do Banco: SICOOB
+15.0;133;142;10;-;Alfa;CNAB ;;;;Uso Exclusivo FEBRABAN / CNAB: Preencher com espaços em branco
+16.0;143;143;1;-;Num;Arquivo;Código;;;Código Remessa / Retorno: '1'
+17.0;144;151;8;-;Num;;Data de Geração;;;Data de Geração do Arquivo
+18.0;152;157;6;-;Num;;Hora de Geração;;;Hora de Geração do Arquivo
+19.0;158;163;6;-;Num;;Seqüência (NSA);;;Número Seqüencial do Arquivo: Número seqüencial adotado e controlado pelo responsável pela geração do arquivo para ordenar a disposição dos arquivos encaminhados. Evoluir um número seqüencial a cada header de arquivo.
+20.0;164;166;3;-;Num;;Layout do Arquivo;;;No da Versão do Layout do Arquivo: '081'
+21.0;167;171;5;-;Num;;Densidade;;;Densidade de Gravação do Arquivo: '00000'
+;;;;;;;;;;
+22.0;172;191;20;-;Alfa;Reservado Banco;;;;Para Uso Reservado do Banco: Preencher com espaços em branco
+23.0;192;211;20;-;Alfa;Reservado Empresa;;;;Para Uso Reservado da Empresa: Preencher com espaços em branco
+24.0;212;240;29;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN / CNAB: Preencher com espaços em branco
+¹;Controle - Banco origem ou destino do arquivo.;;;;;;;;;
+²;Empresa - Beneficiário que firmou o convênio de prestação de serviços com o Sicoob;;;;;;;;;
+³;Conta Corrente (Empresa) - Número da conta do corrente do convênio firmado entre Sicoob e Beneficiário para a prestação do serviço de cobrança.;;;;;;;;;
+;;;;;;;;;;
+HEADER DO LOTE;;;;;;;;;;
+SEQ;Posição;;Nº;Nº;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;Dig;Dec;;;;;;
+01.1;1;3;3;-;Num;Controle;Banco;;;Código do Banco na Compensação: '756'
+02.1;4;7;4;-;Num;;Lote;;;"Lote de Serviço: Número seqüencial para identificar univocamente um lote de serviço. Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo.
+Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior acrescido de 1. O número não poderá ser repetido dentro do arquivo."
+03.1;8;8;1;-;Num;;Registro;;;Tipo de Registro: '1'
+04.1;9;9;1;-;Alfa;Serviço;Operação;;;Tipo de Operação: 'R'
+05.1;10;11;2;-;Num;;Serviço;;;Tipo de Serviço: '01'
+06.1;12;13;2;-;Alfa;;CNAB;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+07.1;14;16;3;-;Num;;Layout do Lote;;;Nº da Versão do Layout do Lote: '040'
+08.1;17;17;1;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+09.1;18;18;1;-;Num;Empresa;Inscrição;Tipo;;"Tipo de Inscrição da Empresa:
+'1'  =  CPF
+'2'  =  CGC / CNPJ"
+10.1;19;33;15;-;Num;;;Número;;Nº de Inscrição da Empresa
+11.1;34;53;20;-;Alfa;;Convênio;;;Código do Convênio no Banco: Preencher com espaços em branco
+12.1;54;58;5;-;Num;;C/C;Agência;Código;Prefixo da Cooperativa: vide planilha 'Contracapa' deste arquivo
+13.1;59;59;1;-;Alfa;;;;DV;Dígito Verificador do Prefixo: vide planilha 'Contracapa' deste arquivo
+14.1;60;71;12;-;Num;;;Conta;Número;Conta Corrente: vide planilha 'Contracapa' deste arquivo
+15.1;72;72;1;-;Alfa;;;;DV;Dígito Verificador da Conta: vide planilha 'Contracapa' deste arquivo
+16.1;73;73;1;-;Alfa;;;DV;;Dígito Verificador da Ag/Conta: Preencher com espaços em branco
+17.1;74;103;30;-;Alfa;;Nome;;;Nome da Empresa
+18.1;104;143;40;-;Alfa;Informação 1;;;;"Mensagem 1: Texto referente a mensagens que serão impressas em todos os boletos referentes ao mesmo lote. Estes campos não serão utilizados no arquivo retorno.
+"
+19.1;144;183;40;-;Alfa;Informação 2;;;;"Mensagem 2: Texto referente a mensagens que serão impressas em todos os boletos referentes ao mesmo lote. Estes campos não serão utilizados no arquivo retorno.
+"
+20.1;184;191;8;-;Num;Controle da Cobrança;;Nº Rem./Ret.;;"Número Remessa/Retorno: Número adotado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo para identificar a seqüência de envio ou devolução do arquivo entre o Beneficiário e o Sicoob.
+Caso número não seja informado, retornará zeros."
+21.1;192;199;8;-;Num;;;Dt. Gravação;;Data de Gravação Remessa/Retorno
+22.1;200;207;8;-;Num;Data do Crédito;;;;Data do Crédito: '00000000'
+23.1;208;240;33;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+;;;;;;;;;;
+REGISTRO DETALHE SEGMENTO P;;;;;;;;;;
+SEQ;Posição;;Nº;Nº;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;Dig;Dec;;;;;;
+01.3P;1;3;3;-;Num;Controle¹;Banco;;;Código do Banco na Compensação: '756'
+02.3P;4;7;4;-;Num;;Lote;;;"Lote de Serviço: Número seqüencial para identificar univocamente um lote de serviço. Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo.
+Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior acrescido de 1. O número não poderá ser repetido dentro do arquivo."
+03.3P;8;8;1;-;Num;;Registro;;;Tipo de Registro: '3'
+04.3P;9;13;5;-;Num;Serviço;Nº do Registro;;;Nº Sequencial do Registro no Lote: Número adotado para identificar a sequência de registros encaminhados no lote. Preencher com '00001' para o primeiro segmento P do lote do arquivo. Para os demais: número do segmento anterior acrescido de 1.
+05.3P;14;14;1;-;Alfa;;Segmento;;;Cód. Segmento do Registro Detalhe: 'P'
+06.3P;15;15;1;-;Alfa;;CNAB;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+07.3P;16;17;2;-;Num;;Cód. Mov.;;;"Código de Movimento Remessa:
+
+'01' = Entrada de Títulos
+'02' = Solicitação de Baixa
+'06' = Prorrogação de Vencimento
+'09' = Protestar
+'10' = Desistência do Protesto e Baixar Título
+'11' = Desistência do Protesto e manter em carteira
+'31' = Alterações de outros dados"
+08.3P;18;22;5;-;Num;C/C;Agência;Código;;Prefixo da Cooperativa: vide planilha 'Contracapa' deste arquivo
+09.3P;23;23;1;-;Alfa;;;DV;;Dígito Verificador do Prefixo: vide planilha 'Contracapa' deste arquivo
+10.3P;24;35;12;-;Num;;Conta;Número;;Conta Corrente: vide planilha 'Contracapa' deste arquivo
+11.3P;36;36;1;-;Alfa;;;DV;;Dígito Verificador da Conta: vide planilha 'Contracapa' deste arquivo
+12.3P;37;37;1;-;Alfa;;DV;;;Dígito Verificador da Ag/Conta: Preencher com espaços em branco
+13.3P;38;57;20;-;Alfa;Nosso Número;;;;"Nosso Número:
+- Se emissão a cargo do Sicoob (vide planilha 'Contracapa' deste arquivo):
+      NumTitulo - 10 posições (1 a 10) = Preencher com zeros
+      Parcela - 02 posições (11 a 12) - '01' se parcela única
+      Modalidade - 02 posições (13 a 14) - vide planilha 'Contracapa' deste arquivo
+      Tipo Formulário - 01 posição  (15 a 15):
+          '1' -auto-copiativo
+          '3'-auto-envelopável
+          '4'-A4 sem envelopamento
+          '6'-A4 sem envelopamento 3 vias
+     Em branco - 05 posições (16 a 20)
+- Se emissão a cargo do Beneficiário (vide planilha 'Contracapa' deste arquivo):
+     NumTitulo - 10 posições (1 a 10): Vide planilha '02.Especificações do Boleto' deste arquivo item 3.13
+     Parcela - 02 posições (11 a 12) - '01' se parcela única
+     Modalidade - 02 posições (13 a 14) - vide planilha 'Contracapa' deste arquivo
+     Tipo Formulário - 01 posição  (15 a 15):
+          '1' -auto-copiativo
+          '3'-auto-envelopável
+          '4'-A4 sem envelopamento
+          '6'-A4 sem envelopamento 3 vias
+     Em branco - 05 posições (16 a 20)"
+14.3P;58;58;1;-;Num;Característica Cobrança;Carteira;;;Código da Carteira: vide planilha 'Contracapa' deste arquivo
+15.3P;59;59;1;-;Num;;Cadastramento;;;Forma de Cadastr. do Título no Banco: '0'
+16.3P;60;60;1;-;Alfa;;Documento;;;Tipo de Documento: Preencher com espaços em branco
+17.3P;61;61;1;-;Num;;Emissão Boleto;;;"Identificação da Emissão do Boleto: (vide planilha 'Contracapa' deste arquivo)
+'1'  =  Sicoob Emite
+'2'  =  Beneficiário Emite"
+18.3P;62;62;1;-;Alfa;;Distrib. Boleto;;;"Identificação da Distribuição do Boleto: (vide planilha 'Contracapa' deste arquivo)
+'1'  =  Sicoob Distribui
+'2'  =  Beneficiário Distribui"
+19.3P;63;77;15;-;Alfa;Nº do Documento;;;;"Número do Documento de Cobrança: Número adotado e controlado pelo Cliente, para identificar o título de cobrança. Informação utilizada pelo Sicoob para referenciar a identificação do documento objeto de cobrança. Poderá conter número de duplicata, no caso de cobrança de duplicatas; número da apólice, no caso de cobrança de seguros, etc."
+20.3P;78;85;8;-;Num;Vencimento;;;;Data de Vencimento do Título
+21.3P;86;100;13;2;Num;Valor do Título;;;;Valor Nominal do Título
+22.3P;101;105;5;-;Num;Ag. Cobradora;;;;Agência Encarregada da Cobrança: '00000'
+23.3P;106;106;1;-;Alfa;DV;;;;Dígito Verificador da Agência: Preencher com espaços em branco
+24.3P;107;108;2;-;Num;Espécie de Título;;;;"Espécie do Título:
+'01'  =  CH Cheque
+'02'  =  DM Duplicata Mercantil
+'03'  =  DMI Duplicata Mercantil p/ Indicação
+'04'  =  DS Duplicata de Serviço
+'05'  =  DSI Duplicata de Serviço p/ Indicação
+'06'  =  DR Duplicata Rural
+'07'  =  LC Letra de Câmbio
+'08'  =  NCC Nota de Crédito Comercial
+'09'  =  NCE Nota de Crédito a Exportação
+'10'  =  NCI Nota de Crédito Industrial
+'11'  =  NCR Nota de Crédito Rural
+'12'  =  NP Nota Promissória
+'13'  =  NPR Nota Promissória Rural
+'14'  =  TM Triplicata Mercantil
+'15'  =  TS Triplicata de Serviço
+'16'  =  NS Nota de Seguro
+'17'  =  RC Recibo
+'18'  =  FAT Fatura
+'19'  =  ND Nota de Débito
+'20'  =  AP Apólice de Seguro
+'21'  =  ME Mensalidade Escolar
+'22'  =  PC Parcela de Consórcio
+'23'  =  NF Nota Fiscal
+'24'  =  DD Documento de Dívida
+?25? = Cédula de Produto Rural 
+'32' = BDP Boleto de Proposta
+'99'  =  Outros"
+25.3P;109;109;1;-;Alfa;Aceite;;;;"Identific. de Título Aceito/Não Aceito: Código adotado pela FEBRABAN para identificar se o título de cobrança foi aceito (reconhecimento da dívida pelo Pagador).
+'A'  =  Aceite
+'N'  =  Não Aceite"
+26.3P;110;117;8;-;Num;Data Emissão do Título;;;;Data da Emissão do Título
+27.3P;118;118;1;-;Num;Juros;Cód. Juros Mora;;;"Código do Juros de Mora:
+'0'  =  Isento
+'1'  =  Valor por Dia
+'2'  =  Taxa Mensal"
+28.3P;119;126;8;-;Num;;Data Juros Mora ;;;Data do Juros de Mora: preencher com a Data de Vencimento do Título formato DDMMAAAA
+29.3P;127;141;13;2;Num;;Juros Mora;;;"Juros de Mora por Dia/Taxa ao Mês
+Valor = R$ ao dia
+Taxa = % ao mês
+Ex: 0000000000220 = 2,20%; Ex: 0000000001040 = 10,40%"
+30.3P;142;142;1;-;Num;Desc 1;Cód. Desc. 1;;;"Código do Desconto 1
+'0'  =  Não Conceder desconto
+'1'  =  Valor Fixo Até a Data Informada
+'2'  =  Percentual Até a Data Informada"
+31.3P;143;150;8;-;Num;;Data Desc. 1;;;Data do Desconto 1
+32.3P;151;165;13;2;Num;;Desconto 1;;;Valor/Percentual a ser Concedido
+33.3P;166;180;13;2;Num;Vlr IOF;;;;Valor do IOF a ser Recolhido
+34.3P;181;195;13;2;Num;Vlr Abatimento;;;;Valor do Abatimento
+35.3P;196;220;25;-;Alfa;Uso Empresa Beneficiário;;;;Identificação do Título na Empresa: Campo destinado para uso do Beneficiário para identificação do Título.
+36.3P;221;221;1;-;Num;Código p/ Protesto;;;;"'1' = Protestar dias corridos
+'3' = Não Protestar
+'9' = Cancelar Instrução de Protesto
+
+O código '9' deverá ser utilizado para cancelar um agendamento futuro de protesto e deverá estar atrelado obrigatóriamente ao código de entrada '31'."
+37.3P;222;223;2;-;Num;Prazo p/ Protesto;;;;"Informar prazo de inicio do protesto a partir do vencimento
+'0' - Não protestar"
+38.3P;224;224;1;-;Num;Código p/ Baixa/Devolução;;;;Código para Baixa/Devolução: '0'
+39.3P;225;227;3;-;Alfa;Prazo p/ Baixa/Devolução;;;;Número de Dias para Baixa/Devolução: Preencher com espaços em branco
+40.3P;228;229;2;-;Num;Código da Moeda;;;;"Código da Moeda:
+'02'  =  Dólar Americano Comercial (Venda)
+'09'  = Real"
+41.3P;230;239;10;-;Num;Número do Contrato;;;;Nº do Contrato da Operação de Créd.: '0000000000'
+42.3P;240;240;1;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+;;;;;;;;;;
+REGISTRO DETALHE SEGMENTO Q;;;;;;;;;;
+SEQ;Posição;;Nº;Nº;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;Dig;Dec;;;;;;
+01.3Q;1;3;3;- ;Num;Controle;;;;Código do Banco na Compensação: '756'
+02.3Q;4;7;4;-;Num;;;;;"Lote de Serviço: Número seqüencial para identificar univocamente um lote de serviço. Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo.
+Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior acrescido de 1. O número não poderá ser repetido dentro do arquivo."
+03.3Q;8;8;1;-;Num;;;;;Tipo de Registro: '3'
+04.3Q;9;13;5;-;Num;Serviço;;;;"Nº Sequencial do Registro no Lote: Número adotado para identificar a sequência de registros encaminhados no lote. Preencher com '00001' para o primeiro segmento P do lote do arquivo. Para os demais: número do segmento anterior acrescido de 1.
+Ex: Se segmento anterior P = '00001'. Então, segmento Q = '00002' e assim consecutivamente."
+05.3Q;14;14;1;-;Alfa;;;;;Cód. Segmento do Registro Detalhe: 'Q'
+06.3Q;15;15;1;-;Alfa;;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+07.3Q;16;17;2;-;Num;;;;;"Código de Movimento Remessa:
+
+'01' = Entrada de Títulos
+'02' = Solicitação de Baixa
+'06' = Prorrogação de Vencimento
+'09' = Protestar
+'10' = Desistência do Protesto e Baixar Título
+'11' = Desistência do Protesto e manter em carteira
+'31' = Alterações de outros dados"
+08.3Q;18;18;1;-;Num;Dados do Pagador;;;;"Tipo de Inscrição Pagador:
+'1'  =  CPF
+'2'  =  CGC / CNPJ"
+09.3Q;19;33;15;-;Num;;;;;Número de Inscrição
+10.3Q;34;73;40;-;Alfa;;;;;Nome
+11.3Q;74;113;40;-;Alfa;;;;;Endereço
+12.3Q;114;128;15;-;Alfa;;;;;Bairro
+13.3Q;129;133;5;-;Num;;;;;CEP
+14.3Q;134;136;3;-;Num;;;;;Sufixo do CEP
+15.3Q;137;151;15;-;Alfa;;;;;Cidade
+16.3Q;152;153;2;-;Alfa;;;;;UF  - Unidade da Federação
+17.3Q;154;154;1;-;Num;Sac. / Aval.;;;;"Tipo de Inscrição Sacador Avalista:
+'1'  =  CPF
+'2'  =  CGC / CNPJ"
+18.3Q;155;169;15;-;Num;;;;;Número de Inscrição
+19.3Q;170;209;40;-;Alfa;Nome do Sacador/Avalista;;;;Nome do Sacador/Avalista
+20.3Q;210;212;3;-;Num;Cód. Bco. Corresp. na Compensação;;;;"Cód. Bco. Corresp. na Compensação:
+Caso o Beneficiário não tenha contratado a opção de Banco Correspondente com o Sicoob, preencher com '000';
+Caso o Beneficiário tenha contratado a opção de Banco Correspondente com o Sicoob e a emissão seja a cargo do Sicoob (SEQ 17.3.P do Segmento P do Detalhe), preencher com '001' (Banco do Brasil) ou '237' (Banco Bradesco)."
+21.3Q;213;232;20;-;Alfa;Nosso Nº no Banco Correspondente;;;;"O campo NN deve ser preenchido com '000', somente nos casos em que o campo anterior tenha indicado o uso do Banco Correspondente.
+Obs.: O preenchimento deste campo será alinha à esquerda a partir da posição 213 indo até 219."
+22.3Q;233;240;8;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB
+;;;;;;;;;;
+REGISTRO DETALHE SEGMENTO R;;;;;;;;;;
+SEQ;Posição;;Nº;Nº;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;Dig;Dec;;;;;;
+01.3R;1;3;3;- ;Num;Controle;Banco;;;Código do Banco na Compensação: '756'
+02.3R;4;7;4;-;Num;;Lote;;;"Lote de Serviço: Número seqüencial para identificar univocamente um lote de serviço. Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo.
+Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior acrescido de 1. O número não poderá ser repetido dentro do arquivo."
+03.3R;8;8;1;-;Num;;Registro;;;Tipo de Registro: '3'
+04.3R;9;13;5;-;Num;Serviço;Nº do Registro;;;"Nº Sequencial do Registro no Lote: Número adotado para identificar a sequência de registros encaminhados no lote. Preencher com '00001' para o primeiro segmento P do lote do arquivo. Para os demais: número do segmento anterior acrescido de 1.
+Ex: Se segmentos anteriores P = '00001' e Q = '00002'. Então segmento R = '00003' e assim consecutivamente."
+05.3R;14;14;1;-;Alfa;;Segmento;;;Cód. Segmento do Registro Detalhe: 'R'
+06.3R;15;15;1;-;Alfa;;CNAB;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+07.3R;16;17;2;-;Num;;Cód. Mov.;;;"Código de Movimento Remessa:
+
+'01' = Entrada de Títulos
+'02' = Solicitação de Baixa
+'06' = Prorrogação de Vencimento
+'09' = Protestar
+'10' = Desistência do Protesto e Baixar Título
+'11' = Desistência do Protesto e manter em carteira
+'31' = Alterações de outros dados"
+08.3R;18;18;1;-;Num;Desc2;Cód. Desc. 2;;;"Código do Desconto 2
+'0'  =  Não Conceder desconto
+'1'  =  Valor Fixo Até a Data Informada
+'2'  =  Percentual Até a Data Informada"
+09.3R;19;26;8;-;Num;;Data Desc. 2;;;Data do Desconto 2
+10.3R;27;41;13;2;Num;;Desconto 2;;;Valor/Percentual a ser Concedido
+11.3R;42;42;1;-;Num;Desc3;Cód. Desc. 3;;;"Código do Desconto 3
+'0'  =  Não Conceder desconto
+'1'  =  Valor Fixo Até a Data Informada
+'2'  =  Percentual Até a Data Informada"
+12.3R;43;50;8;-;Num;;Data Desc. 3;;;Data do Desconto 3: '00000000'
+13.3R;51;65;13;2;Num;;Desconto 3;;;Valor/Percentual a ser Concedido: '000000000000000'
+14.3R;66;66;1;-;Alfa;Multa;Cód. Multa;;;"Código da Multa:
+'0'  =  Isento
+'1'  =  Valor Fixo
+'2'  =  Percentual"
+15.3R;67;74;8;-;Num;;Data da Multa;;;Data da Multa: preencher com a Data de Vencimento do Título formato DDMMAAAA
+16.3R;75;89;13;2;Num;;Multa;;;"Valor/Percentual a Ser Aplicado
+Ex: 0000000000220 = 2,20%; Ex: 0000000001040 = 10,40%"
+17.3R;90;99;10;-;Alfa;Informação ao Pagador;;;;Informação ao Pagador: Preencher com espaços em branco
+18.3R;100;139;40;-;Alfa;Informação 3;;;;"Mensagem 3: Texto de observações destinado ao envio de mensagens livres, a serem impressas no campo de instruções da ficha de compensação do bloqueto.
+As Mensagens 3 e 4 prevalecem sobre as mensagens 1 e 2."
+19.3R;140;179;40;-;Alfa;Informação 4;;;;"Mensagem 4: Texto de observações destinado ao envio de mensagens livres, a serem impressas no campo de instruções da ficha de compensação do bloqueto.
+As Mensagens 3 e 4 prevalecem sobre as mensagens 1 e 2."
+20.3R;180;199;20;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+21.3R;200;207;8;-;Num;Cod. Ocor. Pagador;;;;Cód. Ocor. do Pagador: '00000000'
+22.3R;208;210;3;-;Num;Dados para Débito;Banco;;;Cód. do Banco na Conta do Débito: '000'
+23.3R;211;215;5;-;Num;;Agência;;;Código da Agência do Débito: '00000'
+24.3R.;216;216;1;-;Alfa;;;;;Dígito Verificador da Agência: Preencher com espaços em branco
+25.3R;217;228;12;-;Num;;Conta Corrente ;;;Conta Corrente para Débito: '000000000000'
+26.3R;229;229;1;-;Alfa;;;;;Dígito Verificador da Conta: Preencher com espaços em branco
+27.3R;230;230;1;-;Alfa;;DV;;;Dígito Verificador Ag/Conta: Preencher com espaços em branco
+28.3R;231;231;1;-;Num;Ident. da Emissão do Aviso Déb.;;;;Aviso para Débito Automático: '0'
+29.3R;232;240;9;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+;;;;;;;;;;
+REGISTRO DETALHE SEGMENTO S;;;;;;;;;;
+SEQ;Posição;;Nº;Nº;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;Dig;Dec;;;;;;
+01.3S;1;3;3;- ;Num;Controle;Banco;;;Código do Banco na Compensação: '756'
+02.3S;4;7;4;-;Num;;Lote;;;"Lote de Serviço: Número seqüencial para identificar univocamente um lote de serviço. Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo.
+Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior acrescido de 1. O número não poderá ser repetido dentro do arquivo."
+03.3S;8;8;1;-;Num;;Registro;;;Tipo de Registro: '3'
+04.3S;9;13;5;-;Num;Serviço;Nº do Registro;;;"Nº Sequencial do Registro no Lote:  Número adotado para identificar a sequência de registros encaminhados no lote. Preencher com '00001' para o primeiro segmento P do lote do arquivo. Para os demais: número do segmento anterior acrescido de 1.
+Ex: Se segmentos anteriores P = '00001', Q = '00002', R = '00003'. Então segmento S = '00004' e assim consecutivamente."
+05.3S;14;14;1;-;Alfa;;Segmento;;;Cód. Segmento do Registro Detalhe: 'S'
+06.3S;15;15;1;-;Alfa;;CNAB;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+07.3S;16;17;2;-;Num;;Cód. Mov.;;;"Código de Movimento Remessa:
+
+'01' = Entrada de Títulos
+'02' = Solicitação de Baixa
+'06' = Prorrogação de Vencimento
+'09' = Instrução para Protestar
+'10' = Desistência do Protesto e Baixar Título
+'11' = Desistência do Protesto e manter em carteira
+'31' = Alterações de outros dados"
+Para Tipo de Impressão 1 ou 2:;;;;;;;;;;
+08.3S;18;18;1;-;Num;Tipo de Impressão;;;;"Identificação da Impressão:
+'1'  =  Frente do Bloqueto
+'2'  =  Verso do Bloqueto
+Os tipos de impressão 1 e 2 não são utilizadas."
+09.3S;19;20;2;-;Num;Nº da Linha;;;;Número da Linha a ser Impressa
+10.3S;21;160;140;-;Alfa;Mensagem;;;;"Mensagem a ser impressa:
+Os tipos de impressão 1 e 2 não são utilizadas. Preencher com espaços em branco"
+11.3S;161;162;2;-;Num;Tipo de Fonte;;;;Tipo de caracter a ser impresso
+12.3S;163;240;78;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB
+Para Tipo de Impressão 3:;;;;;;;;;;
+08.3S;18;18;1;-;Num;Tipo de Impressão;;;;"Identificação da Impressão:
+'3'  =  Corpo de Instruções da Ficha de Compensação do Boleto"
+09.3S;19;58;40;-;Alfa;Informação 5;;;;"Mensagem 5: Texto de observações destinado ao envio de mensagens livres, a serem impressas no campo de instruções da ficha de compensação do bloqueto.
+As mensagens 5 à 9 prevalecem sobre as anteriores."
+10.3S;59;98;40;-;Alfa;Informação 6;;;;"Mensagem 6: Texto de observações destinado ao envio de mensagens livres, a serem impressas no campo de instruções da ficha de compensação do bloqueto.
+As mensagens 5 à 9 prevalecem sobre as anteriores."
+11.3S;99;138;40;-;Alfa;Informação 7;;;;"Mensagem 7: Texto de observações destinado ao envio de mensagens livres, a serem impressas no campo de instruções da ficha de compensação do bloqueto.
+As mensagens 5 à 9 prevalecem sobre as anteriores."
+12.3S;139;178;40;-;Alfa;Informação 8;;;;"Mensagem 8: Texto de observações destinado ao envio de mensagens livres, a serem impressas no campo de instruções da ficha de compensação do bloqueto.
+As mensagens 5 à 9 prevalecem sobre as anteriores."
+13.3S;179;218;40;-;Alfa;Informação 9;;;;"Mensagem 9: Texto de observações destinado ao envio de mensagens livres, a serem impressas no campo de instruções da ficha de compensação do bloqueto.
+As mensagens 5 à 9 prevalecem sobre as anteriores."
+14.3S;219;240;22;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+;;;;;;;;;;
+REGISTRO TRAILLER DO LOTE;;;;;;;;;;
+SEQ;Posição;;Nº;Nº;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;Dig;Dec;;;;;;
+01.5;1;3;3;-;Num;Controle;Banco;;;Código do Banco na Compensação: '756'
+02.5;4;7;4;-;Num;;Lote;;;"Lote de Serviço: Número seqüencial para identificar univocamente um lote de serviço. Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo.
+Preencher com '0001' para o primeiro lote do arquivo. Para os demais: número do lote anterior acrescido de 1. O número não poderá ser repetido dentro do arquivo."
+03.5;8;8;1;-;Num;;Registro;;;Tipo de Registro: '5'
+04.5;9;17;9;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+05.5;18;23;6;-;Num;Qtde de Registros;;;;Quantidade de Registros no Lote
+06.5;24;29;6;-;Num;Totalização da Cobrança Simples;;;;Quantidade de Títulos em Cobrança
+07.5;30;46;15;2;Num;;;;;Valor Total dosTítulos em Carteiras
+08.5;47;52;6;-;Num;Totalização da Cobrança Vinculada;;;;Quantidade de Títulos em Cobrança
+09.5;53;69;15;2;Num;;;;;Valor Total dosTítulos em Carteiras
+10.5;70;75;6;-;Num;Totalização da Cobrança Caucionada;;;;Quantidade de Títulos em Cobrança
+11.5;76;92;15;2;Num;;;;;Quantidade de Títulos em Carteiras
+12.5;93;98;6;-;Nim;Totalização da Cobrança Descontada;;;;Quantidade de Títulos em Cobrança
+13.5;99;115;15;2;Num;;;;;Valor Total dosTítulos em Carteiras
+14.5;116;123;8;-;Alfa;N. do Aviso;;;;Número do Aviso de Lançamento: Preencher com espaços em branco
+15.5;124;240;117;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+;;;;;;;;;;
+REGISTRO TRAILLER DO ARQUIVO;;;;;;;;;;
+SEQ;Posição;;Nº;Nº;Form;Campo / Descrição / Conteúdo;;;;
+;De;Até;Dig;Dec;;;;;;
+01.9;1;3;3;-;Num;Controle;;Banco;;Código do Banco na Compensação: '756'
+02.9;4;7;4;-;Num;;;Lote;;Preencher com '9999'.
+03.9;8;8;1;-;Num;;;Registro;;Tipo de Registro: '9'
+04.9;9;17;9;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco
+05.9;18;23;6;-;Num;Totais;;Qtde. de Lotes;;Quantidade de Lotes do Arquivo
+06.9;24;29;6;-;Num;;;Qtde. de Registros;;Quantidade de Registros do Arquivo
+07.9;30;35;6;-;Num;;;Qtde. de Contas Concil.;;Qtde de Contas p/ Conc. (Lotes): '000000'
+08.9;36;240;205;-;Alfa;CNAB;;;;Uso Exclusivo FEBRABAN/CNAB: Preencher com espaços em branco

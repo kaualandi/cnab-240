@@ -1,0 +1,15 @@
+{
+  "name": "cnab-240-to-yaml",
+  "version": "0.0.1",
+  "description": "Lê arquivos CNAB 240 e os transforma em YAML, para facilitar conferências de dados.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Haroldo de Oliveira Pinheiro",
+  "license": "MIT",
+  "dependencies": {
+    "csv": "^6.1.3",
+    "js-yaml": "^4.1.0"
+  }
+}
