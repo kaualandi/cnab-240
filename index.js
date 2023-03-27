@@ -3,7 +3,7 @@ const { parse } = require("csv-parse");
 const readline = require('readline');
 const yaml = require('js-yaml');
 
-const nomeArquivo = process.argv[2];
+const nomeArquivo = 'CC3012A00.RET';
 if (!nomeArquivo) {
 	throw new Error("Nome do arquivo não informado.");
 }
@@ -80,10 +80,22 @@ const salvaYml = (nome, objeto) => new Promise((resolve, reject) => {
 		resolve(yamlDump);
 	});	
 });
+
+const salvaJson = (nome, objeto) => new Promise((resolve, reject) => {
+	const jsonDump = JSON.stringify(objeto);
+	fs.writeFile(nome, jsonDump, err => {
+		if (err) {
+			reject(err);
+		}
+		resolve(jsonDump);
+	});
+});
   
 carregaEstrutura().then(estrutura => {
 	carregaArquivoRemessa(nomeArquivo)
 	.then(linhas => separaCampos(linhas, estrutura))
-	.then(resultado => salvaYml(nomeArquivo + '.yaml', resultado));
+	.then(resultado => {
+		salvaYml(nomeArquivo + '.yaml', resultado);
+		salvaJson(nomeArquivo + '.json', resultado);
+	});
 });
-
