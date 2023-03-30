@@ -2,6 +2,7 @@ const fs = require("fs");
 const { parse } = require("csv-parse");
 const readline = require('readline');
 const yaml = require('js-yaml');
+const refs = require('./refs.json');
 
 const nomeArquivo = 'CC3012A00.RET';
 if (!nomeArquivo) {
@@ -11,6 +12,8 @@ if (!nomeArquivo) {
 let grupo = null;
 const estrutura = {};
 const tiposEstrutura = {};
+
+let markdown = `# ${nomeArquivo}\n\n`;
 
 const carregaEstrutura = () => new Promise((resolve, reject) => {
 	fs.createReadStream("layout-cnab-240.csv")
@@ -90,12 +93,35 @@ const salvaJson = (nome, objeto) => new Promise((resolve, reject) => {
 		resolve(jsonDump);
 	});
 });
-  
+
+const makeMarkdown = objeto => new Promise((resolve, reject) => {
+	objeto.forEach(line => {
+		const lineKeys = Object.keys(line.dados);
+		markdown += `| Campo | Valor | Descrição |\n`;
+		markdown += `|-------|-------|-----------|\n`;
+		lineKeys.forEach(key => {
+			const field = line.dados[key];
+			const ref = refs[key];
+			markdown += `| ${key} | ${field.trim()} | ${ref} |\n`;
+		});
+		markdown += `\n\n`;
+	});
+
+
+	fs.writeFile(nomeArquivo + '.md', markdown, err => {
+		if (err) {
+			reject(err);
+		}
+		resolve(markdown);
+	});
+});
+
 carregaEstrutura().then(estrutura => {
 	carregaArquivoRemessa(nomeArquivo)
 	.then(linhas => separaCampos(linhas, estrutura))
 	.then(resultado => {
 		salvaYml(nomeArquivo + '.yaml', resultado);
 		salvaJson(nomeArquivo + '.json', resultado);
+		makeMarkdown(resultado);
 	});
 });
